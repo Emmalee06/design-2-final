@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import Product from "@/_ui/Product/product"; 
+
 
 
 

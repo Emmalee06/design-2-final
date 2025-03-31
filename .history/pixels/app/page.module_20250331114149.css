@@ -32,14 +32,10 @@
   flex-direction: column;
 }
 
-.image {
-  width: 1%;
+.productImage {
+  width: 100%
 }
 
-.name {
+.productName {
   font-weight: bold;
-}
-
-.price__sale {
-  color: red;
 }
