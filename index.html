@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Flower Shop App</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-content">
+        <div class="greeting">
+          <p>Good morning,</p>
+          <h1>
+            Liam Carter
+            <span
+              class="badge"
+              aria-label="Premium Member"
+              >⭐</span
+            >
+          </h1>
+        </div>
+        <button
+          class="notification-btn"
+          aria-label="Notifications"
+        >
+          <span class="bell-icon">🔔</span>
+          <span
+            class="notification-badge"
+            aria-hidden="true"
+            >3</span
+          >
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Survey Banner -->
+      <section
+        class="survey-banner"
+        aria-labelledby="survey-title"
+      >
+        <div class="banner-content">
+          <h2 id="survey-title">Not sure what flower to pick?</h2>
+          <a
+            href="#"
+            class="survey-btn"
+            >Take the Survey <span aria-hidden="true">→</span></a
+          >
+          <p class="banner-description">
+            Take our quick survey to discover the perfect flowers that match
+            your occasion, preferences, or recipient's personality
+          </p>
+        </div>
+      </section>
+
+      <!-- Watch & Learn Section -->
+      <section
+        class="watch-learn"
+        aria-labelledby="watch-learn-title"
+      >
+        <div class="section-header">
+          <h2 id="watch-learn-title">Watch & Learn</h2>
+          <a
+            href=""
+            class="see-more"
+            >See more</a
+          >
+        </div>
+        <div class="video-carousel">
+          <div class="carousel-container">
+            <button
+              class="carousel-nav prev"
+              aria-label="Previous video"
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button
+              class="carousel-nav next"
+              aria-label="Next video"
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+            <div class="video-card">
+              <div class="video-thumbnail">
+                <img
+                  src="Pasted Graphic 1.png"
+                  alt="Spring Bloom Workshop"
+                  loading="lazy"
+                />
+                <div class="video-info">
+                  <h3>Spring Bloom Workshop</h3>
+                  <p>Duration: 3:10 min</p>
+                </div>
+                <button class="see-details">See details</button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="carousel-dots"
+            role="tablist"
+          >
+            <button
+              class="dot active"
+              role="tab"
+              aria-selected="true"
+              aria-label="Video 1"
+            ></button>
+            <button
+              class="dot"
+              role="tab"
+              aria-selected="false"
+              aria-label="Video 2"
+            ></button>
+            <button
+              class="dot"
+              role="tab"
+              aria-selected="false"
+              aria-label="Video 3"
+            ></button>
+            <button
+              class="dot"
+              role="tab"
+              aria-selected="false"
+              aria-label="Video 4"
+            ></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trending Topics -->
+      <section
+        class="trending-topics"
+        aria-labelledby="trending-title"
+      >
+        <div class="section-header">
+          <h2 id="trending-title">
+            Trending topics for you <span aria-hidden="true">☺</span>
+          </h2>
+          <a
+            href="#"
+            class="see-more"
+            >See more</a
+          >
+        </div>
+        <div class="topics-carousel">
+          <div class="carousel-container">
+            <div class="topic-card">
+              <img
+                src="Pasted Graphic 1.png"
+                alt="Valentine's Day Special"
+                loading="lazy"
+              />
+              <div class="topic-content">
+                <h3>Valentine's Day Special</h3>
+                <p>Find the best flowers to express your love!</p>
+              </div>
+              <button class="see-details">See details</button>
+            </div>
+          </div>
+
+          <div
+            class="carousel-dots"
+            role="tablist"
+          >
+            <button
+              class="dot active"
+              role="tab"
+              aria-selected="true"
+              aria-label="Topic 1"
+            ></button>
+            <button
+              class="dot"
+              role="tab"
+              aria-selected="false"
+              aria-label="Topic 2"
+            ></button>
+            <button
+              class="dot"
+              role="tab"
+              aria-selected="false"
+              aria-label="Topic 3"
+            ></button>
+            <button
+              class="dot"
+              role="tab"
+              aria-selected="false"
+              aria-label="Topic 4"
+            ></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hot Deals -->
+      <section
+        class="hot-deals"
+        aria-labelledby="deals-title"
+      >
+        <div class="section-header">
+          <h2 id="deals-title">
+            Today's Hot Deals <span aria-hidden="true">🔥</span>
+          </h2>
+          <a
+            href="#"
+            class="see-more"
+            >See more</a
+          >
+        </div>
+        <div class="deals-list">
+          <article class="deal-card">
+            <img
+              src="Pasted Graphic 4.png"
+              alt="Spring Pastel Bundle"
+              loading="lazy"
+            />
+            <div class="deal-content">
+              <h3>Spring Pastel Bundle – $10 Off Today</h3>
+              <p class="shop-name">FloralNova Boutique</p>
+              <p class="offer-ends">Offer ends at 8:00 PM</p>
+              <button class="see-details-dark">See details</button>
+            </div>
+          </article>
+
+          <article class="deal-card">
+            <img
+              src="Pasted Graphic 5.png"
+              alt="Peony Blush"
+              loading="lazy"
+            />
+            <div class="deal-content">
+              <h3>"Peony Blush" – 15% Off</h3>
+              <p class="shop-name">Sunshine Florist</p>
+              <p class="offer-ends">Until 6:00 PM today</p>
+              <button class="see-details-dark">See details</button>
+            </div>
+          </article>
+
+          <article class="deal-card">
+            <img
+              src="Pasted Graphic 6.png"
+              alt="Sunflower Trio"
+              loading="lazy"
+            />
+            <div class="deal-content">
+              <h3>Sunflower Trio – Flash Deal $18</h3>
+              <p class="shop-name">SunnyStem Florist</p>
+              <p class="offer-ends">Until 5:00 PM today</p>
+              <button class="see-details-dark">See details</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button
+        class="nav-item"
+        aria-label="Home"
+        data-section="home"
+      >
+        <span class="nav-icon">
+          <img
+            src="navBarIcons/home_on.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </span>
+      </button>
+      <button
+        class="nav-item"
+        aria-label="Search"
+        data-section="search"
+      >
+        <span class="nav-icon">
+          <img
+            src="navBarIcons/search_off.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </span>
+      </button>
+      <button
+        class="nav-item"
+        aria-label="Menu"
+        data-section="menu"
+      >
+        <span class="nav-icon">
+          <img
+            src="navBarIcons/list_off.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </span>
+      </button>
+      <button
+        class="nav-item"
+        aria-label="Profile"
+        data-section="profile"
+      >
+        <span class="nav-icon">
+          <img
+            src="navBarIcons/profile_off.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </span>
+      </button>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>
