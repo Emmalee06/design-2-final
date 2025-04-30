@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Flower Shop App</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!---------------HEADER---------------------------------------->
+
+    <header class="app-header">
+      <!--PROFILE+SETTING--->
+      <div class="header-content">
+        <!--PROFILE-->
+        <div class="header-content-main">
+          <!---PROFLE IMGAE-->
+          <div>
+            <button class="profile-btn">
+              <img
+                class="profile-img"
+                src="hajin/profile.png"
+                alt=""
+              />
+            </button>
+          </div>
+
+          <div class="greeting">
+            <p>Good morning,</p>
+            <h1>Liam Carter</h1>
+          </div>
+        </div>
+
+        <!---SETTING-->
+        <div class="settings-btn-div">
+          <button class="settings-btn">
+            <img
+              src="hajin/settingIcon.png"
+              alt=""
+            />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!------------------------------------------------------->
+
+    <main>
+      <div class="yourSavedList">
+        <p>Your saved list</p>
+      </div>
+
+      <div class="cards">
+        <a
+          href="likedFlowers.html"
+          class="card-button"
+        >
+          <div class="card-label">Liked Flowers</div>
+          <img
+            src="hajin/card1.png"
+            alt=""
+          />
+        </a>
+
+        <a
+          href="likedBouquet.html"
+          class="card-button"
+        >
+          <div class="card-label">Liked Bouquet</div>
+          <img
+            src="hajin/card2.png"
+            alt=""
+          />
+        </a>
+
+        <a
+          href="likedShops.html"
+          class="card-button"
+        >
+          <div class="card-label">Liked Shops</div>
+          <img
+            src="hajin/card3.png"
+            alt=""
+          />
+        </a>
+
+        <div class="card-button add">
+          <span>+</span>
+        </div>
+      </div>
+    </main>
+
+    <!---------------NAV BAR---------------------------------------->
+
+    <nav class="bottom-nav">
+      <button
+        class="nav-item"
+        aria-label="Home"
+        data-section="home"
+      >
+        <span class="nav-icon">
+          <img
+            src="navBarIcons/home_off.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </span>
+      </button>
+      <button
+        class="nav-item"
+        aria-label="Search"
+        data-section="search"
+      >
+        <span class="nav-icon">
+          <img
+            src="navBarIcons/search_off.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </span>
+      </button>
+      <button
+        class="nav-item"
+        aria-label="Menu"
+        data-section="menu"
+      >
+        <span class="nav-icon">
+          <img
+            src="navBarIcons/list_off.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </span>
+      </button>
+      <button
+        class="nav-item"
+        aria-label="Profile"
+        data-section="profile"
+      >
+        <span class="nav-icon">
+          <img
+            src="navBarIcons/profile_on.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </span>
+      </button>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>

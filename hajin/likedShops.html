@@ -1,0 +1,238 @@
+<!-- liked-shops.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Liked Shops</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      .shop-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      .shop-card {
+        display: flex;
+        background: white;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        padding: 12px;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .shop-card img {
+        width: 110px;
+        height: 110px;
+        border-radius: var(--radius-sm);
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .shop-info {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .shop-info h3 {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .shop-info .address {
+        font-size: 0.85em;
+        color: var(--color-primary);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .shop-info p {
+        font-size: 11px;
+        color: var(--color-text-secondary);
+        margin: 0;
+      }
+
+      .shop-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+      }
+
+      .shop-bottom .status {
+        font-weight: bold;
+      }
+
+      .shop-bottom .status.open {
+        color: green;
+      }
+
+      .shop-bottom .status.closed {
+        color: red;
+      }
+
+      .shop-bottom .icon {
+        color: var(--color-primary);
+        font-size: 1.4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="sub-header">
+      <button class="back-btn">
+        <span class="material-icons">arrow_back</span>
+      </button>
+      <h1>Liked Shops</h1>
+      <div class="profile-thumbnail">
+        <img
+          src="hajin/profile.png"
+          alt="Profile"
+        />
+      </div>
+    </header>
+
+    <div class="container">
+      <main
+        class="shop-list"
+        id="shopList"
+      ></main>
+
+      <nav class="bottom-nav">
+        <button
+          class="nav-item"
+          aria-label="Home"
+          data-section="home"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/home_off.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+        <button
+          class="nav-item"
+          aria-label="Search"
+          data-section="search"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/search_off.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+        <button
+          class="nav-item"
+          aria-label="Menu"
+          data-section="menu"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/list_off.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+        <button
+          class="nav-item"
+          aria-label="Profile"
+          data-section="profile"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/profile_on.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+      </nav>
+    </div>
+
+    <script>
+      const shops = [
+        {
+          name: "DDD Flowers",
+          address: "777 Suba St, Burnaby",
+          desc: "Nestled in a charming corner of downtown, Blossom Boutique offers ...",
+          status: "Open",
+          img: "hajin/shop1.png",
+        },
+        {
+          name: "Henry’s house",
+          address: "99 Bond Ave, Vancouver",
+          desc: "Located near the waterfront, Petal & Twig crafts stunning floral arrangements ...",
+          status: "Open",
+          img: "hajin/shop2.png",
+        },
+        {
+          name: "Shasha love",
+          address: "101 Return St, Richmond",
+          desc: "In the heart of the historic district, Rosewood Gardens blends traditional and ...",
+          status: "Closed",
+          img: "hajin/shop3.png",
+        },
+        {
+          name: "Green & Pink",
+          address: "Ma Ave, North Vancouver",
+          desc: "Just steps from Central Park, Lilac Lane features thoughtfully curated ...",
+          status: "Open",
+          img: "hajin/shop4.png",
+        },
+        {
+          name: "Love at the corner",
+          address: "393 Su St, Victoria",
+          desc: "Hidden away in a cozy neighborhood, The Flower Nest specializes in unique ...",
+          status: "Closed",
+          img: "hajin/shop5.png",
+        },
+      ];
+
+      const container = document.getElementById("shopList");
+      shops.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "shop-card";
+        div.innerHTML = `
+          <img src="${item.img}" alt="${item.name}" />
+          <div class="shop-info">
+            <h3>${item.name}</h3>
+            <div class="address">
+              <span class="material-icons">location_on</span>
+              ${item.address}
+            </div>
+            <p>${item.desc}</p>
+            <div class="shop-bottom">
+              <span class="status ${item.status.toLowerCase()}">${
+          item.status
+        }</span>
+              <span class="material-icons icon">favorite</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    </script>
+  </body>
+</html>

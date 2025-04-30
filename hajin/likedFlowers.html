@@ -1,0 +1,185 @@
+<!-- liked-flowers.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Liked Flowers</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body>
+
+
+
+      <header class="sub-header">
+        <button class="back-btn">
+          <span class="material-icons">arrow_back</span>
+        </button>
+        <h1>Liked Flowers</h1>
+        <div class="profile-thumbnail">
+          <img src="hajin/profile.png" alt="Profile" />
+        </div>
+      </header>
+
+
+
+    <div class="container">
+
+      <main
+        class="liked-list"
+        id="flowerList">
+        <!-- JavaScript로 항목 삽입 -->
+      </main>
+
+      <nav class="bottom-nav">
+        <button
+          class="nav-item"
+          aria-label="Home"
+          data-section="home"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/home_off.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+        <button
+          class="nav-item"
+          aria-label="Search"
+          data-section="search"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/search_off.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+        <button
+          class="nav-item"
+          aria-label="Menu"
+          data-section="menu"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/list_off.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+        <button
+          class="nav-item"
+          aria-label="Profile"
+          data-section="profile"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/profile_on.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+      </nav>
+
+    <script>
+      const flowers = [
+        {
+          name: "Ranunculus",
+          desc: "Lush & romantic\nWeddings, Bouquets",
+          price: "$3 - $5",
+          img: "hajin/flower1.png",
+        },
+        {
+          name: "Anemone",
+          desc: "Striking & delicate\nSpring events",
+          price: "$6 - $10",
+          img: "hajin/flower2.png",
+        },
+        {
+          name: "Lisianthus",
+          desc: "Soft & elegant\nAnniversaries, Sympathy",
+          price: "$9 - $12",
+          img: "hajin/flower3.png",
+        },
+        {
+          name: "Freesia",
+          desc: "Fragrant & cheerful\nBirthdays",
+          price: "$2 - $4",
+          img: "hajin/flower4.png",
+        },
+        {
+          name: "Protea",
+          desc: "Bold & exotic\nStatement pieces",
+          price: "$6 - $9",
+          img: "hajin/flower5.png",
+        },
+        {
+          name: "Scabiosa",
+          desc: "Airy & whimsical\nRustic weddings",
+          price: "$6 - $8",
+          img: "hajin/flower6.png",
+        },
+        {
+          name: "Sweet Pea",
+          desc: "Fragrant & charming\nRomantic gifts",
+          price: "$10 - $12",
+          img: "hajin/flower7.png",
+        },
+        {
+          name: "Billy Button",
+          desc: "Playful & modern\nMinimalist designs",
+          price: "$15 - $17",
+          img: "hajin/flower8.png",
+        },
+        {
+          name: "Delphinium",
+          desc: "Tall & graceful\nFormal events",
+          price: "$20 - $22",
+          img: "hajin/flower9.png",
+        },
+        {
+          name: "Veronica",
+          desc: "Slim & dynamic\nTextured bouquets",
+          price: "$1 - $4",
+          img: "hajin/flower10.png",
+        },
+      ];
+
+
+      const container = document.getElementById("flowerList");
+      flowers.forEach((flower) => {
+        const div = document.createElement("div");
+        div.className = "liked-item";
+
+        div.innerHTML = `
+  <img src="${flower.img}" alt="${flower.name}" />
+  <div class="info">
+    <h3>${flower.name}</h3>
+    <p>${flower.desc}</p>
+  </div>
+  <div class="bottom">
+    <div class="price">${flower.price}</div>
+    <span class="material-icons icon">favorite</span>
+  </div>
+`;
+        container.appendChild(div);
+      });
+    </script>
+  </body>
+</html>

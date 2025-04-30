@@ -1,0 +1,261 @@
+<!-- liked-bouquet.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Liked Bouquets</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* 한 줄 하나씩, 세로 정렬 */
+      .bouquet-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      /* 카드 전체 */
+      .bouquet-card {
+        display: flex;
+        background: white;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        padding: 12px;
+        gap: 16px;
+        align-items: center;
+      }
+
+      /* 왼쪽 이미지 */
+      .bouquet-card img {
+        width: 160px;
+        height: 160px;
+        border-radius: var(--radius-sm);
+        object-fit: cover;
+      }
+
+      /* 텍스트 정보 */
+      .bouquet-card .liked-info {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* 제목 */
+      .bouquet-card .liked-info h3 {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0 0 4px 0;
+      }
+
+      /* 꽃집 정보 */
+      .bouquet-card .shop {
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        color: var(--color-primary);
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+
+      .bouquet-card .shop .material-icons {
+        font-size: 16px;
+        margin-right: 4px;
+      }
+
+      /* 설명 */
+      .bouquet-card .liked-info p {
+        font-size: 11px;
+        color: var(--color-text-secondary);
+        margin-bottom: 8px;
+      }
+
+      /* 가격 + 하트 */
+      .bouquet-card .liked-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .bouquet-card .price {
+        font-weight: bold;
+        color: var(--color-primary);
+      }
+
+      .bouquet-card .icon {
+        color: var(--color-primary);
+        font-size: 1.4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="sub-header">
+      <button class="back-btn">
+        <span class="material-icons">arrow_back</span>
+      </button>
+      <h1>Liked Bouquets</h1>
+      <div class="profile-thumbnail">
+        <img
+          src="hajin/profile.png"
+          alt="Profile"
+        />
+      </div>
+    </header>
+
+    <div class="container">
+      <main
+        class="bouquet-list"
+        id="bouquetList"
+      ></main>
+
+      <nav class="bottom-nav">
+        <button
+          class="nav-item"
+          aria-label="Home"
+          data-section="home"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/home_off.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+        <button
+          class="nav-item"
+          aria-label="Search"
+          data-section="search"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/search_off.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+        <button
+          class="nav-item"
+          aria-label="Menu"
+          data-section="menu"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/list_off.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+        <button
+          class="nav-item"
+          aria-label="Profile"
+          data-section="profile"
+        >
+          <span class="nav-icon">
+            <img
+              src="navBarIcons/profile_on.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        </button>
+      </nav>
+    </div>
+
+    <script>
+      const bouquets = [
+        {
+          name: "Peonies, Hydrangeas, Breath, Eucalyptus",
+          shop: "Bloom & Grace",
+          desc: "Soft. Delicate. Romantic, Wedding, anniversary, gentle gestures",
+          price: "$32.99 - $35.99",
+          img: "hajin/bouquet1.png",
+        },
+        {
+          name: "Sunflowers, Gerbera, Solidago, Greenery",
+          shop: "Sunshine Florist",
+          desc: "Cheerful. Vibrant. Uplifting, Birthday, congratulations, friendship gifts",
+          price: "$50.99 - $52.99",
+          img: "hajin/bouquet2.png",
+        },
+        {
+          name: "Orchids, Freesias, Lisianthus, Ferns",
+          shop: "Elegant Petals",
+          desc: "Sophisticated. Refined. Chic, Corporate events, celebrations, formal gifts",
+          price: "$44.99 - $46.99",
+          img: "hajin/bouquet3.png",
+        },
+        {
+          name: "Ranunculus, Lavender, Dahlias, Olive Branches",
+          shop: "Lavender Fields",
+          desc: "Calming. Fragrant. Charming, Sympathy, thoughtful gestures, calming gifts",
+          price: "$90.49 - $93.99",
+          img: "hajin/bouquet4.png",
+        },
+        {
+          name: "Chrysanthemums, Alstroemeria, Greenery",
+          shop: "Garden Fresh",
+          desc: "Fresh. Joyful. Lively, Everyday cheer, get well soon, thank you",
+          price: "$22.99 - $24.99",
+          img: "hajin/bouquet5.png",
+        },
+        {
+          name: "Carnations, Anemones, Waxflower, Ivy",
+          shop: "Classic Blooms",
+          desc: "Timeless. Graceful. Sweet, Mother’s Day, graduation, thoughtful thanks",
+          price: "$33.99 - $35.99",
+          img: "hajin/bouquet6.png",
+        },
+        {
+          name: "Sunflower, Snapdragons, Ferns",
+          shop: "Floral Elegance",
+          desc: "Graceful. Luxurious. Striking, Romantic events, special occasions, anniversaries",
+          price: "$19.99 - $20.99",
+          img: "hajin/bouquet7.png",
+        },
+        {
+          name: "Tulips, Lisianthus, Queen Anne's Lace, Greenery",
+          shop: "Spring Charm",
+          desc: "Playful. Fresh. Delightful, Casual gifting, birthdays, springtime celebrations",
+          price: "$30.99 - $33.99",
+          img: "hajin/bouquet8.png",
+        },
+      ];
+
+      const container = document.getElementById("bouquetList");
+      bouquets.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "bouquet-card";
+        div.innerHTML = `
+          <img src="${item.img}" alt="${item.name}" />
+          <div class="liked-info">
+            <h3>${item.name}</h3>
+            <div class="shop">
+              <span class="material-icons">store</span>
+              ${item.shop}
+            </div>
+            <p>${item.desc}</p>
+            <div class="liked-bottom">
+              <div class="price">${item.price}</div>
+              <span class="material-icons icon">favorite</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    </script>
+  </body>
+</html>
