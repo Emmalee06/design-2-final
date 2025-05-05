@@ -190,3 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Back button functionality
+document.querySelector(".back-btn").addEventListener("click", () => {
+  history.back();
+});

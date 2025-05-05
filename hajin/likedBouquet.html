@@ -159,10 +159,10 @@
             />
           </span>
         </button>
-        <button
+        <a
           class="nav-item"
           aria-label="Profile"
-          data-section="profile"
+          href="Profile.html"
         >
           <span class="nav-icon">
             <img
@@ -171,7 +171,7 @@
               aria-hidden="true"
             />
           </span>
-        </button>
+        </a>
       </nav>
     </div>
 
@@ -254,7 +254,28 @@
             </div>
           </div>
         `;
+
+        const temp = document.createElement("div");
+        temp.appendChild(div);
+        const heart = temp.querySelector(".icon");
+
+        heart.addEventListener("click", (e) => {
+          const icon = e.target;
+          const card = icon.closest(".bouquet-card");
+
+          icon.textContent = "favorite_border";
+          card.classList.add("fade-out");
+
+          setTimeout(() => {
+            card.remove();
+          }, 300);
+        });
+
         container.appendChild(div);
+      });
+
+      document.querySelector(".back-btn").addEventListener("click", () => {
+        history.back();
       });
     </script>
   </body>

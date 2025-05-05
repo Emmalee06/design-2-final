@@ -82,104 +82,130 @@
             />
           </span>
         </button>
-        <button
-          class="nav-item"
-          aria-label="Profile"
-          data-section="profile"
-        >
-          <span class="nav-icon">
-            <img
-              src="navBarIcons/profile_on.png"
-              alt=""
-              aria-hidden="true"
-            />
-          </span>
+        <a
+        class="nav-item"
+        aria-label="Profile"
+        href="Profile.html"
+      >
+        <span class="nav-icon">
+          <img
+            src="navBarIcons/profile_on.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </span>
+      </a>
         </button>
       </nav>
 
-    <script>
-      const flowers = [
-        {
-          name: "Ranunculus",
-          desc: "Lush & romantic\nWeddings, Bouquets",
-          price: "$3 - $5",
-          img: "hajin/flower1.png",
-        },
-        {
-          name: "Anemone",
-          desc: "Striking & delicate\nSpring events",
-          price: "$6 - $10",
-          img: "hajin/flower2.png",
-        },
-        {
-          name: "Lisianthus",
-          desc: "Soft & elegant\nAnniversaries, Sympathy",
-          price: "$9 - $12",
-          img: "hajin/flower3.png",
-        },
-        {
-          name: "Freesia",
-          desc: "Fragrant & cheerful\nBirthdays",
-          price: "$2 - $4",
-          img: "hajin/flower4.png",
-        },
-        {
-          name: "Protea",
-          desc: "Bold & exotic\nStatement pieces",
-          price: "$6 - $9",
-          img: "hajin/flower5.png",
-        },
-        {
-          name: "Scabiosa",
-          desc: "Airy & whimsical\nRustic weddings",
-          price: "$6 - $8",
-          img: "hajin/flower6.png",
-        },
-        {
-          name: "Sweet Pea",
-          desc: "Fragrant & charming\nRomantic gifts",
-          price: "$10 - $12",
-          img: "hajin/flower7.png",
-        },
-        {
-          name: "Billy Button",
-          desc: "Playful & modern\nMinimalist designs",
-          price: "$15 - $17",
-          img: "hajin/flower8.png",
-        },
-        {
-          name: "Delphinium",
-          desc: "Tall & graceful\nFormal events",
-          price: "$20 - $22",
-          img: "hajin/flower9.png",
-        },
-        {
-          name: "Veronica",
-          desc: "Slim & dynamic\nTextured bouquets",
-          price: "$1 - $4",
-          img: "hajin/flower10.png",
-        },
-      ];
-
-
-      const container = document.getElementById("flowerList");
-      flowers.forEach((flower) => {
-        const div = document.createElement("div");
-        div.className = "liked-item";
-
-        div.innerHTML = `
-  <img src="${flower.img}" alt="${flower.name}" />
-  <div class="info">
-    <h3>${flower.name}</h3>
-    <p>${flower.desc}</p>
-  </div>
-  <div class="bottom">
-    <div class="price">${flower.price}</div>
-    <span class="material-icons icon">favorite</span>
-  </div>
-`;
-        container.appendChild(div);
-      });
-    </script>
+      <script>
+        const flowers = [
+          {
+            name: "Ranunculus",
+            desc: "Lush & romantic\nWeddings, Bouquets",
+            price: "$3 - $5",
+            img: "hajin/flower1.png",
+          },
+          {
+            name: "Anemone",
+            desc: "Striking & delicate\nSpring events",
+            price: "$6 - $10",
+            img: "hajin/flower2.png",
+          },
+          {
+            name: "Lisianthus",
+            desc: "Soft & elegant\nAnniversaries, Sympathy",
+            price: "$9 - $12",
+            img: "hajin/flower3.png",
+          },
+          {
+            name: "Freesia",
+            desc: "Fragrant & cheerful\nBirthdays",
+            price: "$2 - $4",
+            img: "hajin/flower4.png",
+          },
+          {
+            name: "Protea",
+            desc: "Bold & exotic\nStatement pieces",
+            price: "$6 - $9",
+            img: "hajin/flower5.png",
+          },
+          {
+            name: "Scabiosa",
+            desc: "Airy & whimsical\nRustic weddings",
+            price: "$6 - $8",
+            img: "hajin/flower6.png",
+          },
+          {
+            name: "Sweet Pea",
+            desc: "Fragrant & charming\nRomantic gifts",
+            price: "$10 - $12",
+            img: "hajin/flower7.png",
+          },
+          {
+            name: "Billy Button",
+            desc: "Playful & modern\nMinimalist designs",
+            price: "$15 - $17",
+            img: "hajin/flower8.png",
+          },
+          {
+            name: "Delphinium",
+            desc: "Tall & graceful\nFormal events",
+            price: "$20 - $22",
+            img: "hajin/flower9.png",
+          },
+          {
+            name: "Veronica",
+            desc: "Slim & dynamic\nTextured bouquets",
+            price: "$1 - $4",
+            img: "hajin/flower10.png",
+          },
+        ];
+      
+        const container = document.getElementById("flowerList");
+      
+        flowers.forEach((flower) => {
+          const div = document.createElement("div");
+          div.className = "liked-item";
+      
+          div.innerHTML = `
+            <img src="${flower.img}" alt="${flower.name}" />
+            <div class="info">
+              <h3>${flower.name}</h3>
+              <p>${flower.desc}</p>
+            </div>
+            <div class="bottom">
+              <div class="price">${flower.price}</div>
+              <span class="material-icons icon">favorite</span>
+            </div>
+          `;
+      
+          // Add heart click logic here
+          const temp = document.createElement("div");
+          temp.appendChild(div);
+          const heart = temp.querySelector(".icon");
+      
+          heart.addEventListener("click", (e) => {
+            const icon = e.target;
+            const card = icon.closest(".liked-item");
+      
+            // Change heart to unfilled
+            icon.textContent = "favorite_border";
+      
+            // Fade out then remove
+            card.classList.add("fade-out");
+            setTimeout(() => {
+              card.remove();
+            }, 300); // Match CSS transition time
+          });
+      
+          container.appendChild(div);
+        });
+      
+        // Back button
+        document.querySelector(".back-btn").addEventListener("click", () => {
+          history.back();
+        });
+      </script>
   </body>
 </html>
