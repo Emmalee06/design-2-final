@@ -1,0 +1,162 @@
+<!-- settings.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      .settings-section {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .settings-box {
+        background: white;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        padding: 8px 0;
+      }
+
+      .setting-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 20px;
+        border-bottom: 1px solid #eee;
+        color: var(--color-primary);
+        font-weight: 500;
+      }
+
+      .setting-item:last-child {
+        border-bottom: none;
+      }
+
+      .setting-item span {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1rem;
+      }
+
+      .sign-out {
+        text-align: center;
+        font-weight: bold;
+        color: var(--color-primary);
+        text-decoration: underline;
+        margin: 24px 0 100px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+
+
+  <body>
+    <!-- HEADER (from Profile.html) -->
+    <header class="sub-header">
+      <button class="back-btn">
+        <span class="material-icons">arrow_back</span>
+      </button>
+      <h1>Settings</h1>
+      <div class="profile-thumbnail">
+
+      </div>
+    </header>
+
+    <!-- SETTINGS LIST -->
+    <main class="settings-section">
+      <div class="settings-box">
+        <div class="setting-item">
+          <span><span class="material-icons">person</span>Profile</span>
+          <span class="material-icons">chevron_right</span>
+        </div>
+        <div class="setting-item">
+          <span><span class="material-icons">badge</span>Account information</span>
+          <span class="material-icons">chevron_right</span>
+        </div>
+      </div>
+
+      <div class="settings-box">
+        <div class="setting-item">
+          <span><span class="material-icons">accessibility</span>Accessibility</span>
+          <span class="material-icons">chevron_right</span>
+        </div>
+        <div class="setting-item">
+          <span><span class="material-icons">notifications</span>Notification</span>
+          <span class="material-icons">chevron_right</span>
+        </div>
+        <div class="setting-item">
+          <span><span class="material-icons">language</span>Region</span>
+          <span class="material-icons">chevron_right</span>
+        </div>
+        <div class="setting-item">
+          <span><span class="material-icons">translate</span>Language</span>
+          <span class="material-icons">chevron_right</span>
+        </div>
+        <div class="setting-item">
+          <span><span class="material-icons">apps</span>System</span>
+          <span class="material-icons">chevron_right</span>
+        </div>
+      </div>
+
+      <div class="settings-box">
+        <div class="setting-item">
+          <span><span class="material-icons">security</span>Privacy policy</span>
+          <span class="material-icons">chevron_right</span>
+        </div>
+        <div class="setting-item">
+          <span><span class="material-icons">local_florist</span>About us</span>
+          <span class="material-icons">chevron_right</span>
+        </div>
+        <div class="setting-item">
+          <span><span class="material-icons">campaign</span>Announcements</span>
+          <span class="material-icons">chevron_right</span>
+        </div>
+        <div class="setting-item">
+          <span><span class="material-icons">headset_mic</span>Support</span>
+          <span class="material-icons">chevron_right</span>
+        </div>
+      </div>
+
+      <div class="sign-out">Sign out</div>
+    </main>
+
+    <!-- NAV BAR (copied from Profile.html) -->
+    <nav class="bottom-nav">
+      <button class="nav-item" aria-label="Home" data-section="home">
+        <span class="nav-icon">
+          <img src="navBarIcons/home_off.png" alt="" aria-hidden="true" />
+        </span>
+      </button>
+      <button class="nav-item" aria-label="Search" data-section="search">
+        <span class="nav-icon">
+          <img src="navBarIcons/search_off.png" alt="" aria-hidden="true" />
+        </span>
+      </button>
+      <button class="nav-item" aria-label="Menu" data-section="menu">
+        <span class="nav-icon">
+          <img src="navBarIcons/list_off.png" alt="" aria-hidden="true" />
+        </span>
+      </button>
+      <a class="nav-item" aria-label="Profile" href="Profile.html">
+        <span class="nav-icon">
+          <img src="navBarIcons/profile_on.png" alt="" aria-hidden="true" />
+        </span>
+      </a>
+    </nav>
+
+    <script>
+            document.querySelector(".back-btn").addEventListener("click", () => {
+        history.back();
+      });
+    </script>
+  </body>
+</html>
