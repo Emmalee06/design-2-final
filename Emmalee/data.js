@@ -90,3 +90,81 @@ const flowerDatabase = [
         },
     },
 ];
+
+// Quiz questions
+const questions = [
+    {
+        text: "What is the occasion for the flowers?",
+        options: [
+            { text: "A Romantic Gift", value: "romantic" },
+            {
+                text: "A Celebration (birthday, wedding, etc.)",
+                value: "celebration",
+            },
+            { text: "Sympathy or Condolence Gift", value: "sympathy" },
+            { text: "I'm not too sure...", value: "any" },
+        ],
+        category: "occasion",
+    },
+    {
+        text: "Who are you getting the flowers for?",
+        options: [
+            { text: "My Partner", value: "romantic" },
+            { text: "Family Member(s)", value: "family" },
+            { text: "My Friend(s)", value: "friend" },
+            { text: "For Myself", value: "self" },
+        ],
+        category: "recipient",
+    },
+    {
+        text: "What mood or feeling do you want the flowers to portray?",
+        options: [
+            { text: "Warmth and Happiness", value: "warmth happiness" },
+            { text: "Love and Romance", value: "love romance" },
+            { text: "Comfort and Peace", value: "comfort peace" },
+            { text: "Surprise and Delight", value: "surprise delight" },
+            { text: "I'm not too sure, surprise me!", value: "any" },
+        ],
+        category: "mood",
+    },
+    {
+        text: "Which best describes the recipient's (or your own) personality?",
+        options: [
+            { text: "Outgoing and Adventurous", value: "outgoing adventurous" },
+            { text: "Gentle and Kind", value: "gentle kind" },
+            {
+                text: "Serious and Sophisticated",
+                value: "serious sophisticated",
+            },
+            { text: "Quiet and Introverted", value: "quiet introverted" },
+        ],
+        category: "personality",
+    },
+    {
+        text: "What colours do you or the recipient most like?",
+        options: [
+            {
+                text: "Soft Pastels (baby blue, lavender, etc.)",
+                value: "pastel",
+            },
+            {
+                text: "Deep/ Rich (burgundy, navy blue, etc.)",
+                value: "deep rich",
+            },
+            { text: "Bright Colours (yellow, orange, etc.)", value: "bright" },
+            { text: "Neutral Colors (white, brown, etc.)", value: "neutral" },
+            { text: "I'm not too sure, surprise me!", value: "any" },
+        ],
+        category: "colors",
+    },
+    {
+        text: "Lastly, what is the most important feature for the flowers to have?",
+        options: [
+            { text: "To look visually stunning", value: "visual" },
+            { text: "The flowers having a nice scent", value: "scent" },
+            { text: "The meaning behind the flowers", value: "meaning" },
+            { text: "A mix of everything", value: "mix" },
+        ],
+        category: "feature",
+    },
+];
