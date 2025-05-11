@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flower Recommendation App</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="icons">
+                <div class="signal">•••</div>
+                <div class="wifi">▲</div>
+                <div class="battery">■</div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="filled" id="progress"></div>
+        </div>
+
+        <div id="welcome-screen" class="screen active">
+            <div class="title">Flower Finder</div>
+            <p>Find the perfect flowers for any occasion.</p>
+            <button class="button" onclick="startQuiz()">Get Started</button>
+        </div>
+
+        <div id="loading-screen" class="screen">
+            <div class="title">Getting Your Results...</div>
+            <div class="loading-dots loading">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="did-you-know">
+                <div class="did-you-know-title">Did you know?</div>
+                <div class="did-you-know-text">
+                    The city of Vancouver was gifted hundreds of flowering
+                    cherry trees from Japan to honour the Japanese Canadian
+                    soldiers who served in WW1
+                </div>
+            </div>
+        </div>
+
+        <div id="results-screen" class="screen">
+            <div class="title">Based on your results we recommend:</div>
+            <div class="flower-card">
+                <img
+                    src="/api/placeholder/400/320"
+                    alt="Flower arrangement"
+                    class="flower-image"
+                    id="flower-image"
+                />
+                <div class="flower-name">
+                    <span id="flower-name">Red Roses</span>
+                    <span class="heart-icon">♡</span>
+                </div>
+                <div class="flower-info">
+                    <div class="flower-detail" id="availability">
+                        Availability: Year-round
+                    </div>
+                    <div class="flower-detail" id="best-for">
+                        Best For: Anniversaries
+                    </div>
+                    <div class="flower-detail" id="flower-desc">
+                        Love. Loyalty. Passion. Between cultures, roses have
+                        various meaning. However, universally, Red Roses are
+                        known for...
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <button class="more-button" onclick="resetQuiz()">
+                More Recommendations
+            </button>
+        </div>
+
+        <div id="question-screen" class="screen">
+            <div class="back-button" onclick="goBack()">←</div>
+            <img
+                src="/api/placeholder/200/150"
+                alt="Flower illustration"
+                class="illustration"
+                id="question-illustration"
+            />
+            <div id="question-text">Who are you getting the flowers for?</div>
+            <div id="options-container">
+                <!-- Options will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <script src="data.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
