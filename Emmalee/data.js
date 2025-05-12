@@ -1,7 +1,7 @@
 const flowerDatabase = [
     {
         name: "Red Roses",
-        image: "/api/placeholder/400/320",
+        image: "flower-img/roses.png",
         availability: "Year-round",
         bestFor: "Anniversaries",
         description:
@@ -16,7 +16,7 @@ const flowerDatabase = [
     },
     {
         name: "Sunflowers",
-        image: "/api/placeholder/400/320",
+        image: "flower-img/sunflower.png",
         availability: "Summer - Fall",
         bestFor: "Celebrations",
         description:
@@ -31,7 +31,7 @@ const flowerDatabase = [
     },
     {
         name: "White Lilies",
-        image: "/api/placeholder/400/320",
+        image: "flower-img/white lily.jpg",
         availability: "Year-round",
         bestFor: "Sympathy",
         description:
@@ -46,7 +46,7 @@ const flowerDatabase = [
     },
     {
         name: "Lavender Bouquet",
-        image: "/api/placeholder/400/320",
+        image: "flower-img/lavender.jpg",
         availability: "Summer",
         bestFor: "Self-care",
         description:
@@ -61,7 +61,7 @@ const flowerDatabase = [
     },
     {
         name: "Mixed Spring Bouquet",
-        image: "/api/placeholder/400/320",
+        image: "flower-img/mixed spring bouquet.jpg",
         availability: "Spring",
         bestFor: "Birthdays",
         description:
@@ -76,7 +76,7 @@ const flowerDatabase = [
     },
     {
         name: "Orchids",
-        image: "/api/placeholder/400/320",
+        image: "flower-img/orchids.jpg",
         availability: "Year-round",
         bestFor: "Sophisticated gifts",
         description:
