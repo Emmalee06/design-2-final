@@ -1,0 +1,79 @@
+.heart-container {
+    position: relative;
+    display: inline-block;
+}
+
+.heart-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.heart-button:hover {
+    transform: scale(1.1);
+}
+
+.heart-svg {
+    width: 24px;
+    height: 24px;
+    transition: all 0.2s ease;
+}
+
+.heart-svg path {
+    stroke: #4a0404;
+    stroke-width: 2;
+    fill: transparent;
+    transition: all 0.2s ease;
+}
+
+.heart-svg.hovered:not(.liked) path {
+    fill: #ffcccb;
+}
+
+.heart-svg.liked path {
+    fill: #4a0404;
+    stroke: #4a0404;
+}
+
+.heart-svg.liked.hovered path {
+    fill: #4a0404;
+    opacity: 0.8;
+}
+
+.snackbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 1000;
+    animation: fadeInOut 3s ease;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    10% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    90% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+}

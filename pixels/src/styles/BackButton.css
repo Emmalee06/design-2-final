@@ -1,0 +1,28 @@
+.styled-back-button {
+    position: absolute;
+    top: calc(var(--status-bar-height) + 20px);
+    left: 15px;
+    z-index: 10;
+    padding: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.styled-back-button:hover {
+    transform: scale(1.1);
+}
+
+.styled-back-button:active {
+    transform: scale(0.95);
+}
+
+.back-arrow {
+    width: 24px;
+    height: 24px;
+    display: block;
+}

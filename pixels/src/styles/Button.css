@@ -1,0 +1,36 @@
+.custom-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+    z-index: 2;
+}
+
+.custom-button:hover {
+    background-color: #1d4050;
+}
+
+.custom-button:active {
+    background-color: #1d4050;
+}
+
+.custom-button.full-width {
+    width: 100%;
+}
+
+/* Special styling for welcome screen button */
+.welcome-screen .custom-button {
+    border-radius: 25px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    max-width: 280px;
+}
