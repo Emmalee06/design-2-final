@@ -1,8 +1,15 @@
 import React from "react";
+import { useRouter } from "next/router";
 import "../styles/WelcomeScreen.css";
 import Button from "./Button";
 
-function WelcomeScreen({ onStart, onSignInClick }) {
+function WelcomeScreen({ onStart }) {
+    const router = useRouter();
+
+    const handleSignIn = () => {
+        router.push("/sign-in-success");
+    };
+
     return (
         <div className="welcome-screen">
             <img
@@ -27,7 +34,7 @@ function WelcomeScreen({ onStart, onSignInClick }) {
 
             <p className="sign-in-text">
                 Already have an account?{" "}
-                <button onClick={onSignInClick} className="sign-in-link">
+                <button onClick={handleSignIn} className="sign-in-link">
                     Sign in!
                 </button>
             </p>

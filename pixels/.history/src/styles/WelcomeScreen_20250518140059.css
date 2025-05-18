@@ -53,17 +53,9 @@
 }
 
 .sign-in-link {
-    background: none;
-    border: none;
-    color: #4a6d7c;
-    text-decoration: underline;
-    cursor: pointer;
-    padding: 0;
-    font: inherit;
-}
-
-.sign-in-link:hover {
-    color: #3a5a68;
+    color: #4a6670;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .decorative-lily {

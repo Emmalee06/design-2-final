@@ -55,15 +55,16 @@
 .sign-in-link {
     background: none;
     border: none;
-    color: #4a6d7c;
+    color: #4caf50;
     text-decoration: underline;
     cursor: pointer;
+    font-size: inherit;
     padding: 0;
-    font: inherit;
+    margin: 0;
 }
 
 .sign-in-link:hover {
-    color: #3a5a68;
+    color: #45a049;
 }
 
 .decorative-lily {

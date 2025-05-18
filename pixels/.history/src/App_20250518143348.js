@@ -22,10 +22,6 @@ function App() {
         setUserAnswers({});
     };
 
-    const handleStartQuiz = () => {
-        startQuiz();
-    };
-
     const handleAnswer = (value, category) => {
         const newAnswers = { ...userAnswers, [category]: value };
         setUserAnswers(newAnswers);
@@ -109,7 +105,7 @@ function App() {
 
             {currentScreen === "welcome" && (
                 <WelcomeScreen
-                    onStart={handleStartQuiz}
+                    onStart={startQuiz}
                     onSignInClick={handleSignInClick}
                 />
             )}

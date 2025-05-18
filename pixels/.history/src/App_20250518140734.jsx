@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { flowerDatabase, questions } from "./data/flowerData";
-import WelcomeScreen from "./components/WelcomeScreen";
-import QuestionScreen from "./components/QuestionScreen";
-import LoadingScreen from "./components/LoadingScreen";
-import ResultsScreen from "./components/ResultsScreen";
-import ReadMoreScreen from "./components/ReadMoreScreen";
-import SignInScreen from "./components/SignInScreen";
-import ProgressBar from "./components/ProgressBar";
+import WelcomeScreen from "./components/WelcomeScreen.jsx";
+import QuestionScreen from "./components/QuestionScreen.jsx";
+import LoadingScreen from "./components/LoadingScreen.jsx";
+import ResultsScreen from "./components/ResultsScreen.jsx";
+import ReadMoreScreen from "./components/ReadMoreScreen.jsx";
+import ProgressBar from "./components/ProgressBar.jsx";
 import "./styles/App.css";
 
 function App() {
@@ -14,16 +13,11 @@ function App() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [userAnswers, setUserAnswers] = useState({});
     const [recommendedFlower, setRecommendedFlower] = useState(null);
-    const [showSignIn, setShowSignIn] = useState(false);
 
     const startQuiz = () => {
         setCurrentScreen("question");
         setCurrentQuestionIndex(0);
         setUserAnswers({});
-    };
-
-    const handleStartQuiz = () => {
-        startQuiz();
     };
 
     const handleAnswer = (value, category) => {
@@ -93,14 +87,6 @@ function App() {
         return (currentQuestionIndex / questions.length) * 100;
     };
 
-    const handleSignInClick = () => {
-        setShowSignIn(true);
-    };
-
-    const handleCloseSignIn = () => {
-        setShowSignIn(false);
-    };
-
     return (
         <div className="app">
             {currentScreen === "question" && (
@@ -108,10 +94,7 @@ function App() {
             )}
 
             {currentScreen === "welcome" && (
-                <WelcomeScreen
-                    onStart={handleStartQuiz}
-                    onSignInClick={handleSignInClick}
-                />
+                <WelcomeScreen onStart={startQuiz} />
             )}
 
             {currentScreen === "question" && (
@@ -140,8 +123,6 @@ function App() {
                     onMoreRecommendations={handleMoreRecommendations}
                 />
             )}
-
-            {showSignIn && <SignInScreen onClose={handleCloseSignIn} />}
         </div>
     );
 }

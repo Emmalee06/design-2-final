@@ -1,8 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/WelcomeScreen.css";
 import Button from "./Button";
 
-function WelcomeScreen({ onStart, onSignInClick }) {
+function WelcomeScreen({ onStart }) {
+    const navigate = useNavigate();
+
+    const handleSignIn = () => {
+        navigate("/sign-in-success");
+    };
+
     return (
         <div className="welcome-screen">
             <img
@@ -27,7 +34,7 @@ function WelcomeScreen({ onStart, onSignInClick }) {
 
             <p className="sign-in-text">
                 Already have an account?{" "}
-                <button onClick={onSignInClick} className="sign-in-link">
+                <button onClick={handleSignIn} className="sign-in-link">
                     Sign in!
                 </button>
             </p>

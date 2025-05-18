@@ -1,29 +1,30 @@
 import React, { useState } from "react";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    useNavigate,
+} from "react-router-dom";
 import { flowerDatabase, questions } from "./data/flowerData";
 import WelcomeScreen from "./components/WelcomeScreen";
 import QuestionScreen from "./components/QuestionScreen";
 import LoadingScreen from "./components/LoadingScreen";
 import ResultsScreen from "./components/ResultsScreen";
 import ReadMoreScreen from "./components/ReadMoreScreen";
-import SignInScreen from "./components/SignInScreen";
+import SignInSuccessScreen from "./components/SignInSuccessScreen";
 import ProgressBar from "./components/ProgressBar";
 import "./styles/App.css";
 
-function App() {
-    const [currentScreen, setCurrentScreen] = useState("welcome");
+function AppContent() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [userAnswers, setUserAnswers] = useState({});
     const [recommendedFlower, setRecommendedFlower] = useState(null);
-    const [showSignIn, setShowSignIn] = useState(false);
+    const navigate = useNavigate();
 
     const startQuiz = () => {
-        setCurrentScreen("question");
+        navigate("/question");
         setCurrentQuestionIndex(0);
         setUserAnswers({});
-    };
-
-    const handleStartQuiz = () => {
-        startQuiz();
     };
 
     const handleAnswer = (value, category) => {
@@ -33,11 +34,11 @@ function App() {
         if (currentQuestionIndex < questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
-            setCurrentScreen("loading");
+            navigate("/loading");
             setTimeout(() => {
                 const bestMatch = findBestMatch(newAnswers);
                 setRecommendedFlower(bestMatch);
-                setCurrentScreen("results");
+                navigate("/results");
             }, 6000);
         }
     };
@@ -72,17 +73,11 @@ function App() {
     };
 
     const goBack = () => {
-        if (currentScreen === "readMore") {
-            setCurrentScreen("results");
-        } else if (currentQuestionIndex > 0) {
-            setCurrentQuestionIndex(currentQuestionIndex - 1);
-        } else {
-            setCurrentScreen("welcome");
-        }
+        navigate(-1);
     };
 
     const handleReadMore = () => {
-        setCurrentScreen("readMore");
+        navigate("/read-more");
     };
 
     const handleMoreRecommendations = () => {
@@ -93,56 +88,62 @@ function App() {
         return (currentQuestionIndex / questions.length) * 100;
     };
 
-    const handleSignInClick = () => {
-        setShowSignIn(true);
-    };
-
-    const handleCloseSignIn = () => {
-        setShowSignIn(false);
-    };
-
     return (
         <div className="app">
-            {currentScreen === "question" && (
-                <ProgressBar progress={getProgress()} />
-            )}
-
-            {currentScreen === "welcome" && (
-                <WelcomeScreen
-                    onStart={handleStartQuiz}
-                    onSignInClick={handleSignInClick}
+            <Routes>
+                <Route
+                    path="/"
+                    element={<WelcomeScreen onStart={startQuiz} />}
                 />
-            )}
-
-            {currentScreen === "question" && (
-                <QuestionScreen
-                    question={questions[currentQuestionIndex]}
-                    onAnswer={handleAnswer}
-                    onBack={goBack}
-                    questionNumber={currentQuestionIndex + 1}
+                <Route
+                    path="/question"
+                    element={
+                        <>
+                            <ProgressBar progress={getProgress()} />
+                            <QuestionScreen
+                                question={questions[currentQuestionIndex]}
+                                onAnswer={handleAnswer}
+                                onBack={goBack}
+                                questionNumber={currentQuestionIndex + 1}
+                            />
+                        </>
+                    }
                 />
-            )}
-
-            {currentScreen === "loading" && <LoadingScreen />}
-
-            {currentScreen === "results" && (
-                <ResultsScreen
-                    flower={recommendedFlower}
-                    onReset={startQuiz}
-                    onReadMore={handleReadMore}
+                <Route path="/loading" element={<LoadingScreen />} />
+                <Route
+                    path="/results"
+                    element={
+                        <ResultsScreen
+                            flower={recommendedFlower}
+                            onReset={startQuiz}
+                            onReadMore={handleReadMore}
+                        />
+                    }
                 />
-            )}
-
-            {currentScreen === "readMore" && (
-                <ReadMoreScreen
-                    flower={recommendedFlower}
-                    onBack={goBack}
-                    onMoreRecommendations={handleMoreRecommendations}
+                <Route
+                    path="/read-more"
+                    element={
+                        <ReadMoreScreen
+                            flower={recommendedFlower}
+                            onBack={goBack}
+                            onMoreRecommendations={handleMoreRecommendations}
+                        />
+                    }
                 />
-            )}
-
-            {showSignIn && <SignInScreen onClose={handleCloseSignIn} />}
+                <Route
+                    path="/sign-in-success"
+                    element={<SignInSuccessScreen />}
+                />
+            </Routes>
         </div>
+    );
+}
+
+function App() {
+    return (
+        <Router>
+            <AppContent />
+        </Router>
     );
 }
 

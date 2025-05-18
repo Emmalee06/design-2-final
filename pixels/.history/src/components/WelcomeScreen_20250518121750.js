@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/WelcomeScreen.css";
 import Button from "./Button";
 
-function WelcomeScreen({ onStart, onSignInClick }) {
+function WelcomeScreen({ onStart }) {
     return (
         <div className="welcome-screen">
             <img
@@ -27,9 +27,9 @@ function WelcomeScreen({ onStart, onSignInClick }) {
 
             <p className="sign-in-text">
                 Already have an account?{" "}
-                <button onClick={onSignInClick} className="sign-in-link">
+                <a href="#" className="sign-in-link">
                     Sign in!
-                </button>
+                </a>
             </p>
 
             <img
