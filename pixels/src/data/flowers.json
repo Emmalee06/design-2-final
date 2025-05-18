@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Rose",
+        "season": "summer",
+        "color": "red",
+        "description": "Classic symbol of love and passion"
+    },
+    {
+        "name": "Tulip",
+        "season": "spring",
+        "color": "pink",
+        "description": "Beautiful spring flower with cup-shaped blooms"
+    },
+    {
+        "name": "Sunflower",
+        "season": "summer",
+        "color": "yellow",
+        "description": "Tall flower that follows the sun"
+    },
+    {
+        "name": "Lily",
+        "season": "summer",
+        "color": "white",
+        "description": "Elegant flower with a sweet fragrance"
+    },
+    {
+        "name": "Lavender",
+        "season": "summer",
+        "color": "purple",
+        "description": "Fragrant herb with beautiful purple spikes"
+    },
+    {
+        "name": "Daisy",
+        "season": "spring",
+        "color": "white",
+        "description": "Simple and cheerful flower"
+    },
+    {
+        "name": "Chrysanthemum",
+        "season": "fall",
+        "color": "yellow",
+        "description": "Popular autumn flower with many varieties"
+    },
+    {
+        "name": "Poinsettia",
+        "season": "winter",
+        "color": "red",
+        "description": "Traditional Christmas flower"
+    }
+]
