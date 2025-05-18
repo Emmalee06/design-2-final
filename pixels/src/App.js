@@ -5,7 +5,6 @@ import QuestionScreen from "./components/QuestionScreen";
 import LoadingScreen from "./components/LoadingScreen";
 import ResultsScreen from "./components/ResultsScreen";
 import ReadMoreScreen from "./components/ReadMoreScreen";
-import StatusBar from "./components/StatusBar";
 import ProgressBar from "./components/ProgressBar";
 import "./styles/App.css";
 
@@ -90,7 +89,6 @@ function App() {
 
     return (
         <div className="app">
-            <StatusBar />
             {currentScreen === "question" && (
                 <ProgressBar progress={getProgress()} />
             )}
