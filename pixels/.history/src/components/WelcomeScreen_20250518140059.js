@@ -1,0 +1,44 @@
+import React from "react";
+import "../styles/WelcomeScreen.css";
+import Button from "./Button";
+
+function WelcomeScreen({ onStart }) {
+    return (
+        <div className="welcome-screen">
+            <img
+                src="/welcome-screen/lily_valley.svg"
+                alt="Decorative lily"
+                className="decorative-lily"
+            />
+
+            <div className="logo-container">
+                <img src="/welcome-screen/logo.svg" alt="Bloomguide Logo" />
+            </div>
+
+            <h1 className="welcome-title">
+                Your Perfect Bloom, Just One Click Away
+            </h1>
+
+            <p className="welcome-subtitle">
+                Take our quick quiz to discover your perfect blooms!
+            </p>
+
+            <Button onClick={onStart}>Get Started Now</Button>
+
+            <p className="sign-in-text">
+                Already have an account?{" "}
+                <a href="#" className="sign-in-link">
+                    Sign in!
+                </a>
+            </p>
+
+            <img
+                src="/welcome-screen/leaves.svg"
+                alt="Decorative leaves"
+                className="decorative-leaves"
+            />
+        </div>
+    );
+}
+
+export default WelcomeScreen;

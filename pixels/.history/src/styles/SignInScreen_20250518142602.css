@@ -1,0 +1,93 @@
+.signin-container {
+    padding: 20px;
+    min-height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.signin-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.signin-header h1 {
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 34px; /* To offset the back button and center the text */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.signin-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #000;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.signin-button {
+    background-color: #4a6d7c;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.signin-button:hover {
+    background-color: #3a5a68;
+}

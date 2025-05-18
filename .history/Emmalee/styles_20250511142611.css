@@ -1,0 +1,252 @@
+:root {
+    --primary-color: #2c5d70;
+    --background-color: #faf6ed;
+    --text-color: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    width: 393px;
+    height: 852px;
+    min-height: 852px;
+    max-width: 393px;
+    max-height: 852px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-size: 0.75rem;
+}
+
+.status-bar .time {
+    font-weight: bold;
+}
+
+.status-bar .icons {
+    display: flex;
+    gap: 5px;
+}
+
+.progress-bar {
+    height: 2px;
+    width: 100%;
+    background-color: #ddd;
+}
+
+.progress-bar .filled {
+    height: 100%;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.back-button {
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    z-index: 10;
+}
+
+.screen {
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    max-width: 80%;
+}
+
+.loading-dots {
+    display: flex;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.did-you-know {
+    margin-top: 60px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 1s;
+    max-width: 80%;
+    text-align: center;
+}
+
+.did-you-know-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.did-you-know-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:active {
+    background-color: #1d4050;
+}
+
+.flower-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    width: 100%;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flower-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.flower-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heart-icon {
+    color: #888;
+    font-size: 1.5rem;
+}
+
+.flower-info {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.flower-detail {
+    margin: 5px 0;
+    color: #666;
+}
+
+.more-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.illustration {
+    width: 50%;
+    max-width: 200px;
+    margin: 20px 0;
+    margin-top: 60px; /* Add spacing below the back button */
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loading .dot:nth-child(1) {
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.loading .dot:nth-child(2) {
+    animation: bounce 1s ease-in-out 0.2s infinite;
+}
+
+.loading .dot:nth-child(3) {
+    animation: bounce 1s ease-in-out 0.4s infinite;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#question-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 25px 0;
+}
+
+#options-container {
+    width: 100%;
+    margin-top: 10px;
+}

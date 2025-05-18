@@ -1,0 +1,80 @@
+.results-title {
+    font-family: "Source Serif Pro", serif;
+    font-size: 28px;
+    color: #000;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.flower-card {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flower-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.flower-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.flower-name {
+    font-family: "Source Serif Pro", serif;
+    font-size: 24px;
+    color: #4a0404;
+    margin: 0;
+}
+
+.heart-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #4a0404;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.flower-info {
+    color: #666;
+}
+
+.flower-detail {
+    margin: 8px 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.flower-detail strong {
+    color: #333;
+}
+
+.flower-description {
+    margin: 12px 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.read-more-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.read-more-link:hover {
+    text-decoration: underline;
+}
